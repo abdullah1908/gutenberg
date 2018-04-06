@@ -69,7 +69,8 @@ export class BlockSettingsMenu extends Component {
 						'is-opened': isOpen,
 					} );
 
-					return (
+					return [
+						<BlockRemoveButton key="remove" uids={ uids } role="menuitem" />,
 						<IconButton
 							className={ toggleClassname }
 							onClick={ () => {
@@ -85,7 +86,7 @@ export class BlockSettingsMenu extends Component {
 							onFocus={ this.onFocus }
 							onBlur={ this.onBlur }
 						/>
-					);
+					];
 				} }
 				renderContent={ ( { onClose } ) => (
 				// Should this just use a DropdownMenu instead of a DropDown ?
